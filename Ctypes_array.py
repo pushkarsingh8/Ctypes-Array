@@ -19,6 +19,33 @@ class MeraList:
             
         self.A[self.n] = item
         self.n += 1
+        
+    def __getitem__(self,index):
+        if 0<= index < self.n:
+            return self.A[index]
+        else:
+            return "Indexing Error"
+        
+        
+    def pop(self):
+        if self.n == 0 :    
+            return 'Empty List'
+            
+        else:
+            self.n = self.n - 1
+            return  self.n
+        
+    def clear(self):
+        self.n = 0
+        self.size = 1
+        
+        
+        
+    def find(self,item):
+        for i in range(self.n):
+            if self.A[i] == item:
+                return i
+        return "ValueError Item not find"    
             
             
             
@@ -33,6 +60,7 @@ class MeraList:
         
         self.A = B
         
+    
             
             
         
@@ -56,8 +84,14 @@ class MeraList:
 l = MeraList()
 
 l.append(5)
+l.append(4)
+l.append(3)
 
-print(l)
+
+
+print(l.find(4))
+
+
 
 
 
