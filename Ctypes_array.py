@@ -60,12 +60,29 @@ class MeraList:
         
         self.A = B
         
-    
-            
-            
         
+    def insert(self,pos,item):
+        if 0<= pos< self.n:
+            if self.n == self.size:
+                self.__resize(self.size*2)
+    
+            for i in range(self.n,pos,-1):
+                self.A[i] = self.A[i-1]
             
+            self.A[pos] = item
+            self.n = self.n+1
             
+        else:
+            return "IndexError"
+        
+        
+    def __delitem__(self,pos):
+        
+        for i in range(pos,self.n-1):
+            self.A[i] = self.A[i+1]
+        
+        self.n = self.n-1
+        
             
     
     def __str__(self):
@@ -88,8 +105,9 @@ l.append(4)
 l.append(3)
 
 
+l.insert(1,100)
 
-print(l.find(4))
+print(l)
 
 
 
