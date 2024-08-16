@@ -8,19 +8,23 @@ class MeraList:
         self.A = self.__make_array__(self.size)
         
     
+    #find a len of List
     def __len__(self):
         return self.n
     
     
+    #append add a value adds it at the end of list
     def append(self,item):
         
         if self.n == self.size:
+            #it's return double array old_array*2 
             self.__resize(self.size*2)
             
         self.A[self.n] = item
         self.n += 1
         
     def __getitem__(self,index):
+        #find a element based on index
         if 0<= index < self.n:
             return self.A[index]
         else:
@@ -28,6 +32,7 @@ class MeraList:
         
         
     def pop(self):
+        #Delete an element from the last item in the list.
         if self.n == 0 :    
             return 'Empty List'
             
@@ -36,13 +41,16 @@ class MeraList:
             return  self.n
         
     def clear(self):
+        #reset Array size / number
         self.n = 0
         self.size = 1
         
         
         
     def find(self,item):
+        #find a item & Return a index of specfic item where is place
         for i in range(self.n):
+            #time complexity O(n) "Linear"
             if self.A[i] == item:
                 return i
         return "ValueError Item not find"    
@@ -56,6 +64,7 @@ class MeraList:
         # copy the content into A to B:-
         
         for i in range(self.n):
+            #time complexity O(n) "Linear"
             B[i] = self.A[i]
         
         self.A = B
