@@ -102,6 +102,15 @@ class MeraList:
         else:
             return pos
         
+    def sort(self):
+        for i in range(self.n):
+            for j in range(0,self.n-i-1):
+                #using bubble sorting
+                
+                if self.A[j] > self.A[j+1]: #5 / 2
+                    self.A[j],self.A[j+1] = self.A[j+1] ,self.A[j]
+                    
+        return self.A
         
             
     
@@ -126,7 +135,7 @@ l.append(3)
 
 
 l.insert(1,100)
-l.remove(100)
+l.sort()
 
 print(l)
 
