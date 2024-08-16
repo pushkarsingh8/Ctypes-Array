@@ -83,6 +83,17 @@ class MeraList:
         
         self.n = self.n-1
         
+    
+    def remove(self,item):
+        pos = self.find(item)
+        
+        if type(pos) == int:
+            #delete
+            self.__delitem__(pos)
+        else:
+            return pos
+        
+        
             
     
     def __str__(self):
@@ -106,6 +117,7 @@ l.append(3)
 
 
 l.insert(1,100)
+l.remove(100)
 
 print(l)
 
