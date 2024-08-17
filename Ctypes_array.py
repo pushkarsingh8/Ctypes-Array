@@ -103,6 +103,8 @@ class MeraList:
             return pos
         
     def sort(self):
+        if self.n== 0:
+            return "Empty List"
         for i in range(self.n):
             for j in range(0,self.n-i-1):
                 #using bubble sorting
@@ -130,12 +132,13 @@ class MeraList:
         return maxx
 
     def sum(self):
+        
         add = 0
         for i in range(self.n):
+            
             add += self.A[i]
             
-        self.A = add
-        return self.A             
+        return add             
             
 
     
@@ -157,17 +160,15 @@ class MeraList:
     
 l = MeraList()
 
-l.append(5)
-l.append(4)
-l.append(3)
+# l.append(5)
+# l.append(4)
+# l.append(3)
 
 
-l.insert(1,100)
-l.sort()
+# l.insert(1,100)
 
-l = l.sum()
 
-print(l)
+print(l.sort())
 
 
 
