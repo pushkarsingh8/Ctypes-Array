@@ -112,6 +112,33 @@ class MeraList:
                     
         return self.A
     
+    def min(self):
+        minn = self.A[0]
+        for i in range(self.n):
+            if self.A[i]  < minn:
+                minn = self.A[i]
+        
+                
+        return minn
+    
+    def max(self):
+        maxx = self.A[0]
+        for i in range(self.n):
+            if self.A[i] > maxx:
+                maxx = self.A[i]
+        
+        return maxx
+
+    def sum(self):
+        add = 0
+        for i in range(self.n):
+            add += self.A[i]
+            
+        self.A = add
+        return self.A             
+            
+
+    
         
             
     
@@ -138,7 +165,10 @@ l.append(3)
 l.insert(1,100)
 l.sort()
 
+l = l.sum()
+
 print(l)
+
 
 
 
