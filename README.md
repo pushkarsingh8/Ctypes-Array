@@ -1,0 +1,1 @@
+I use a  ctypes module in Python to create a referential array that is faster and capable of storing any type of data. This module also allows you to define functions and methods that can run programs more efficiently.
