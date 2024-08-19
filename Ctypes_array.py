@@ -130,6 +130,22 @@ class MeraList:
                 maxx = self.A[i]
         
         return maxx
+    
+    def extend(self,items):
+        #Every time pass value and measure a size of array for extend items
+        for item in items:
+        
+            if self.n == self.size:
+                self.__resize(self.size*2)
+            
+            
+            self.A[self.n] = item
+            self.n = self.n+1
+            
+        
+        
+            
+        
 
     def sum(self):
         
@@ -160,15 +176,16 @@ class MeraList:
     
 l = MeraList()
 
-# l.append(5)
-# l.append(4)
-# l.append(3)
+l.append(5)
+l.append(4)
+l.append(3)
 
 
-# l.insert(1,100)
+l.insert(1,100)
+l.extend([1,2,3,333,"Hello"])
 
 
-print(l.sort())
+print(l[8])
 
 
 
